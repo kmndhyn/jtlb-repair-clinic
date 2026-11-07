@@ -1,0 +1,22 @@
+{
+  "schemaVersion": 2,
+  "name": "JTLB Repair Clinic",
+  "source": "DESIGN.md",
+  "extensions": {
+    "breakpoints": [
+      480,
+      800,
+      1100,
+      1500
+    ],
+    "containerMax": 1280,
+    "motion": "Continuous gear strip; reduced-motion static alternative"
+  },
+  "components": [
+    {
+      "name": "Primary action",
+      "html": "<button class=\"ds-button\">Find your repair</button>",
+      "css": ".ds-button{background:#ed453b;color:#111;padding:14px 24px;border:0;font:700 17px \"Barlow Condensed\",sans-serif;min-height:54px}.ds-button:hover{background:#ff685e}.ds-button:focus-visible{outline:3px solid #f3f0e9;outline-offset:5px}"
+    }
+  ]
+}

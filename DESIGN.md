@@ -1,13 +1,67 @@
-# JTLB visual direction
+---
+name: JTLB Repair Clinic
+description: Hardware-led repair website in red and black
+colors:
+  primary: "#ed453b"
+  primary-deep: "#bd2c25"
+  neutral-bg: "#111111"
+  surface: "#1b1b1b"
+  text: "#f3f0e9"
+  secondary-text: "#bbb8b1"
+  line: "#363636"
+typography:
+  display:
+    fontFamily: Anton
+    fontWeight: 400
+    lineHeight: 1.08
+  body:
+    fontFamily: Barlow
+    fontSize: 17px
+    lineHeight: 1.55
+  label:
+    fontFamily: Barlow Condensed
+    fontWeight: 600
+rounded:
+  control: 0px
+spacing:
+  section: 104px
+  section-mobile: 68px
+components:
+  button-primary:
+    backgroundColor: "{colors.primary}"
+    textColor: "{colors.neutral-bg}"
+    padding: "14px 24px"
+    height: 54px
+---
 
-The user prefers Simon Biala's Circuitfix website and explicitly requires red and black. Preserve its tactile, independent repair-shop character: warm black, repair red, cream paper, condensed display lettering, fine rules, stamps and ticket details. Avoid replacing this with a generic technology landing page.
+## Overview
+The user rejected the paper-ticket layouts and requested a substantial redesign while retaining red and black, JTLB artwork and detailed repair benefits. The current design puts hardware and a working device-specific repair finder first. Flat dark surfaces, bold condensed type and restrained rules replace the ticket decoration and repeated service-card grid.
 
-- Display: self-hosted Anton. Body: Barlow. Labels: Barlow Condensed.
-- Black #0d0b0b; cream #eee7d5; paper #e6ddc5; repair red #dc413b.
-- The hero centers on a functional cream repair-enquiry ticket, not a simulated live repair record. Device selection updates the ticket and carries into the enquiry form.
-- Original JTLB mascot artwork appears in the clinic section. Use the source artwork, not generated replacement imagery.
-- Continuous brand/device strip with pause/resume; reduced-motion visitors get a static, horizontally scrollable list.
-- Services are a ruled repair menu. Process numbers represent actual sequential steps. The enquiry form repeats the paper-ticket treatment.
-- Responsive layouts are checked at 320, 390, 768 and 1440 pixels. Native mobile navigation uses details/summary.
-- Keep motion limited to the ticket entrance, brand strip and small hover feedback. Reduced-motion disables animation.
-- No fabricated ratings, testimonials, repair totals, live progress, guarantees, addresses or contact details.
+## Colors
+Repair red carries actions, selected tabs and the full-width upgrade section. Near-black is the primary ground; off-white carries headings and readable body copy. Dark red identifies the enquiry section.
+
+## Typography
+Self-hosted Anton for display headings; Barlow for reading; Barlow Condensed for controls and device labels. Display copy is capped at 96px. Long descriptions stay in the body face.
+
+## Layout
+Container maximum 1280px, with 48px desktop and 20px phone side margins. Two-column hero and editorial sections become single-column below 800px. The repair finder uses five device tabs and specific fault rows. Tabs scroll horizontally on phones and support arrow, Home and End keys. Forms collapse to one field per row on small screens.
+
+## Elevation & Depth
+The controller cutout uses a soft directional shadow. The rest of the site relies on tonal surfaces and fine rules. No simulated repair progress or fake customer records.
+
+## Shapes
+Square controls and rectangular surfaces. A red circular ground frames the real controller product image. Original JTLB artwork is shown intact in the clinic section.
+
+## Components
+- Repair finder: accessible tablist, single visible panel, keyboard navigation, fault links prefill the form.
+- Gear strip: automatic scrolling, pause/resume, hover pause; reduced-motion visitors get static horizontal scrolling.
+- Enquiry: Repair/Upgrade choice, device, optional model, description validation, copy status and manual-copy fallback. The contact placeholder and copy-only behavior remain explicit.
+- FAQ and mobile navigation: native details/summary controls.
+- Motion: brand strip plus small hover feedback; reduced-motion disables transitions and animation.
+
+## Do's and Don'ts
+- Preserve red/black, original JTLB identity and the controller qualifier on 48-hour turnaround.
+- Keep diagnosis, quote approval, no-fix/no-fee and warranty information easy to find.
+- Credit product imagery; never present it as a JTLB workshop photograph.
+- Do not fabricate testimonials, review scores, repair counts, locations or contact details.
+- Do not restore the discarded paper-ticket hero or repeated service-card grid.
