@@ -9,6 +9,7 @@ const services = [
   { title: 'Disc drive repair', description: 'For discs that won’t read, drives that won’t eject and noises that don’t sound right.', tags: 'PlayStation · Xbox', icon: 'disc', fault: 'Disc drive' },
   { title: 'Handheld & retro', description: 'Old favourites deserve another playthrough. Tell us what you’re keeping alive.', tags: 'PSP · PS Vita · Nintendo DS · Game Boy', icon: 'handheld', fault: 'Handheld / retro' },
 ];
+const marqueeDevices = ['PlayStation', 'Xbox', 'Nintendo Switch', 'DualSense', 'Joy-Con', 'PSP / PS Vita', 'Game Boy', 'Retro consoles'];
 const devices = ['PlayStation', 'Xbox', 'Nintendo Switch', 'Controller', 'Handheld / retro'];
 ---
 <!doctype html>
@@ -64,7 +65,15 @@ const devices = ['PlayStation', 'Xbox', 'Nintendo Switch', 'Controller', 'Handhe
           </div>
         </div>
       </section>
-      <div class="device-strip"><div class="container"><span>IN GOOD COMPANY</span><p>PLAYSTATION <i>/</i> XBOX <i>/</i> NINTENDO SWITCH <i>/</i> HANDHELD & RETRO</p></div></div>
+      <div class="device-strip"><div class="container">
+        <span class="strip-label">IN GOOD COMPANY</span>
+        <div class="marquee" role="region" aria-label="Brands and devices we service">
+          <div class="marquee-track">
+            {[false, true].map(duplicate => <div class="marquee-group" aria-hidden={duplicate ? 'true' : undefined}>{marqueeDevices.map(device => <span>{device}<i aria-hidden="true">/</i></span>)}</div>)}
+          </div>
+        </div>
+        <button class="marquee-toggle" type="button" aria-pressed="false" aria-label="Pause brand scrolling">Pause</button>
+      </div></div>
       <section class="section container" id="services">
         <div class="section-heading"><h2>SMALL SHOP.<br /><span>SERIOUS REPAIRS.</span></h2><p>One faulty part doesn’t have to mean the end.<br />Here’s where we can help.</p></div>
         <div class="services-grid">{services.map((service)=><a class="service" href="#repair" data-fault={service.fault}>
@@ -89,6 +98,14 @@ const devices = ['PlayStation', 'Xbox', 'Nintendo Switch', 'Controller', 'Handhe
     </main>
     <footer><div class="container footer-top"><a class="brand" href="#top"><img src="/images/jtlb-icon.jpg" width="46" height="46" alt=""/><span>J THE LAST BOSS<small>REPAIR CLINIC</small></span></a><p>KEEP THE GEAR. KEEP THE MEMORIES.</p><a href="#top">Back to top <svg class="icon"><use href="#arrow" /></svg></a></div><div class="container footer-bottom"><span>© {new Date().getFullYear()} JTLB Repair Clinic</span><span>Independent repair shop. Not affiliated with Sony, Microsoft or Nintendo.</span></div></footer>
     <script>
+      const marqueeToggle = document.querySelector<HTMLButtonElement>('.marquee-toggle')!;
+      marqueeToggle.addEventListener('click', () => {
+        const paused = marqueeToggle.getAttribute('aria-pressed') !== 'true';
+        marqueeToggle.setAttribute('aria-pressed', String(paused));
+        marqueeToggle.setAttribute('aria-label', paused ? 'Resume brand scrolling' : 'Pause brand scrolling');
+        marqueeToggle.textContent = paused ? 'Resume' : 'Pause';
+        document.querySelector('.marquee-track')!.classList.toggle('is-paused', paused);
+      });
       const form = document.querySelector<HTMLFormElement>('#repair-form')!;
       const deviceSelect = document.querySelector<HTMLSelectElement>('#device')!;
       const issue = document.querySelector<HTMLTextAreaElement>('#issue')!;
