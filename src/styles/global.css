@@ -249,15 +249,7 @@ align-items:center}
   left:12%;
   top:7%;
 z-index:-2}
-.stage-type{
-  position:absolute;
-  font:400 96px/.93 var(--display);
-  letter-spacing:-.02em;
-  right:1%;
-  top:4%;
-  color:#f35248;
-  z-index:-1;
-transform:rotate(8deg)}
+
 .hero-controller{
   width:730px;
   max-width:none;
@@ -272,28 +264,24 @@ pointer-events:none}
   display:flex;
   align-items:center;
   gap:10px;
-  background:var(--paper);
-  color:var(--ink);
-  padding:9px 14px 9px 8px;
-  font:700 14px var(--label);
-  letter-spacing:.04em;
-box-shadow:0 8px 25px #0005}
+  min-height:44px;
+  background:var(--surface);
+  color:var(--muted);
+  border:1px solid #494949;
+  padding:10px 12px;
+  font:500 14px var(--body);
+}
 .hardware-label:hover{
-background:white}
+  color:var(--paper);
+  border-color:var(--muted);
+}
 .hardware-label .icon{
 width:16px}
 .label-drift{
   top:46%;
   left:2%;
-transform:rotate(-3deg)}
-.hotspot{
-  display:grid;
-  place-items:center;
-  width:28px;
-  height:28px;
-  background:var(--red);
-  color:var(--ink);
-font:400 25px var(--body)}
+}
+
 .turnaround{
   position:absolute;
   right:2%;
@@ -311,22 +299,8 @@ letter-spacing:.14em}
 font-variant-numeric:tabular-nums}
 .turnaround strong span{
 font-size:42px}
-.stage-footer{
-  position:absolute;
-  bottom:0;
-  left:15%;
-  right:0;
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  border-top:1px solid var(--line);
-  padding-top:16px;
-  color:var(--muted);
-  font:600 12px var(--label);
-letter-spacing:.12em}
-.stage-footer .icon{
-  width:29px;
-height:29px}
+
+
 .assurance-bar{
   display:grid;
   grid-template-columns:repeat(3,1fr);
@@ -898,10 +872,7 @@ text-decoration:underline}
     width:360px;
     left:8%;
   top:10%}
-  .stage-type{
-    font-size:90px;
-    right:0;
-  top:7%}
+
   .hero-controller{
   width:690px}
   .turnaround{
@@ -1009,10 +980,7 @@ text-decoration:underline}
     width:350px;
     left:18%;
   top:7%}
-  .stage-type{
-    right:8%;
-    top:9%;
-  font-size:90px}
+
   .hero-controller{
     width:690px;
   top:45%}
@@ -1022,11 +990,7 @@ text-decoration:underline}
   .turnaround{
     right:5%;
   bottom:8%}
-  .stage-footer{
-    left:8%;
-    right:5%;
-    font-size:10px;
-  padding-top:10px}
+
   .assurance-bar{
     margin-top:15px;
     gap:15px;
@@ -1214,10 +1178,7 @@ text-decoration:underline}
     width:270px;
     left:12%;
   top:3%}
-  .stage-type{
-    font-size:72px;
-    right:1%;
-  top:3%}
+
   .hero-controller{
     width:560px;
     top:44%;
@@ -1225,13 +1186,10 @@ text-decoration:underline}
   .label-drift{
     left:0;
     top:42%;
-    padding:6px 10px 6px 6px;
-    font-size:11px;
-  gap:7px}
-  .hotspot{
-    width:22px;
-    height:22px;
-  font-size:20px}
+    padding:10px 12px;
+    font-size:13px;
+  gap:8px}
+
   .turnaround{
     right:0;
     bottom:9%;
@@ -1242,15 +1200,8 @@ text-decoration:underline}
   font-size:29px}
   .turnaround>span{
   font-size:9px}
-  .stage-footer{
-    left:0;
-    right:0;
-    bottom:0;
-    font-size:9px;
-  padding-top:8px}
-  .stage-footer .icon{
-    width:23px;
-  height:23px}
+
+
   .assurance-bar{
     grid-template-columns:1fr;
     padding-block:18px;
@@ -1330,8 +1281,8 @@ text-decoration:underline}
   .footer-top .brand>span{
   font-size:18px}
   .back-top{
-    font-size:11px;
-  gap:7px}
+    font-size:13px;
+  gap:8px}
   .back-top .icon{
   width:15px}
   .footer-top .brand img{
