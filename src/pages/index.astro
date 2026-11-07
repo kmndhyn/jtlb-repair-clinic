@@ -3,7 +3,7 @@ import '../styles/fonts.css';
 import '../styles/global.css';
 const services = [
   { title: 'CONSOLE REPAIR', description: 'No power. Random shutdowns. A console that won’t boot. Let’s get to the root of the problem.', tags: ['PS5', 'PS4', 'XBOX', 'SWITCH'], icon: 'console', fault: 'Power / startup' },
-  { title: 'CONTROLLER REPAIR', description: 'Stick drift, missed inputs and charging faults. Get back in control of your game.', tags: ['DUALSENSE', 'JOY-CON', 'XBOX'], icon: 'controller', fault: 'Controller / stick drift' },
+  { title: 'CONTROLLER REPAIR', description: 'Stick drift, missed inputs and charging faults. Most controller jobs fixed in 48 hours, so you can get back in control.', tags: ['DUALSENSE', 'JOY-CON', 'XBOX'], icon: 'controller', fault: 'Controller / stick drift' },
   { title: 'HDMI & CHARGING PORTS', description: 'No signal, bent pins or a loose connection. Small components. Big difference.', tags: ['HDMI', 'USB', 'CHARGING'], icon: 'port', fault: 'HDMI / no display' },
   { title: 'CLEANING & THERMAL', description: 'Loud fans and heat getting in the way? Time to deal with what’s building up inside.', tags: ['DEEP CLEAN', 'THERMAL CARE'], icon: 'fan', fault: 'Overheating / fan noise' },
   { title: 'DISC DRIVE REPAIR', description: 'Discs not reading, drives not ejecting or a grinding sound that wasn’t there before.', tags: ['PLAYSTATION', 'XBOX'], icon: 'disc', fault: 'Disc drive' },
@@ -18,7 +18,7 @@ const devices = ['PlayStation', 'Xbox', 'Nintendo Switch', 'Controller', 'Handhe
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>J The Last Boss Repair Clinic — Back to life. Back to the game.</title>
-    <meta name="description" content="Console, controller and handheld repair at J The Last Boss Repair Clinic. From stick drift to HDMI faults — start your repair enquiry." />
+    <meta name="description" content="Console, controller and handheld repairs. Free diagnosis, no fix no fee, and a 90-day repair warranty. Ask JTLB about repairs and upgrades." />
     <meta name="theme-color" content="#0d0b0b" />
     <meta property="og:title" content="JTLB Repair Clinic — Back to life. Back to the game." />
     <meta property="og:description" content="Your console has more games left in it. Explore console, controller and handheld repairs at JTLB." />
@@ -45,8 +45,8 @@ const devices = ['PlayStation', 'Xbox', 'Nintendo Switch', 'Controller', 'Handhe
           <span>J The Last Boss<small>REPAIR CLINIC</small></span>
         </a>
         <nav aria-label="Main navigation"><a href="#services">What we fix</a><a href="#clinic">The clinic</a><a href="#process">How it works</a><a href="#faq">FAQ</a></nav>
-        <a class="button button-small" href="#repair">Start a repair <svg class="icon"><use href="#arrow" /></svg></a>
-        <details class="mobile-navigation"><summary>MENU <span aria-hidden="true"></span></summary><nav aria-label="Mobile navigation"><a href="#services">What we fix</a><a href="#clinic">The clinic</a><a href="#process">How it works</a><a href="#faq">FAQ</a><a href="#repair">Start a repair</a></nav></details>
+        <a class="button button-small" href="#repair-form">Start a repair <svg class="icon"><use href="#arrow" /></svg></a>
+        <details class="mobile-navigation"><summary>MENU <span aria-hidden="true"></span></summary><nav aria-label="Mobile navigation"><a href="#services">What we fix</a><a href="#clinic">The clinic</a><a href="#process">How it works</a><a href="#faq">FAQ</a><a href="#repair-form">Start a repair</a></nav></details>
       </div>
     </header>
     <main id="main">
@@ -54,29 +54,29 @@ const devices = ['PlayStation', 'Xbox', 'Nintendo Switch', 'Controller', 'Handhe
         <div class="container hero-grid">
           <div class="hero-copy">
             <h1>BROKEN CONSOLE?<br />WE BRING IT<br /><span>BACK TO LIFE.</span></h1>
-            <p>From stick drift to a screen that stays black. Console, controller and handheld repairs for the games you’re not done playing.</p>
-            <div class="hero-actions"><a class="button" href="#repair">Start your repair <svg class="icon"><use href="#arrow" /></svg></a><a class="text-link" href="#services">Explore our services <svg class="icon"><use href="#arrow" /></svg></a></div>
-            <div class="hero-support"><span><svg class="icon"><use href="#controller" /></svg> Consoles & controllers</span><span><svg class="icon"><use href="#handheld" /></svg> Handheld & retro</span></div>
+            <p>From stick drift to HDMI faults. Console, controller and handheld repairs with free diagnosis, an upfront quote and a 90-day warranty.</p>
+            <div class="hero-actions"><a class="button" href="#repair-form">Start your repair <svg class="icon"><use href="#arrow" /></svg></a><a class="text-link" href="#services">Explore our services <svg class="icon"><use href="#arrow" /></svg></a></div>
+            <div class="hero-support"><span><svg class="icon"><use href="#check" /></svg> Free diagnosis</span><span><svg class="icon"><use href="#check" /></svg> No fix, no fee</span><span><svg class="icon"><use href="#check" /></svg> 90-day warranty</span></div>
             <div class="signoff"><span>LOOT</span><b>//</b><span>REPAIR</span><b>//</b><span>REPEAT</span></div>
           </div>
           <div class="ticket-scene">
             <div class="ticket-backing" aria-hidden="true"></div>
-            <div class="ticket-seal" aria-hidden="true">KEEP IT<br /><strong>PLAYING.</strong><span>J THE LAST BOSS</span></div>
+            <div class="ticket-seal">REPAIR COVER<strong>90 DAYS</strong><span>PARTS + WORKMANSHIP</span></div>
             <article class="repair-ticket" aria-labelledby="ticket-title">
               <div class="ticket-top"><img src="/images/jtlb-icon.jpg" width="34" height="34" alt=""/><span>JTLB REPAIR CLINIC<small>YOUR COMEBACK STARTS HERE</small></span><svg class="icon"><use href="#port" /></svg></div>
               <div class="ticket-title"><h2 id="ticket-title">LET’S FIX<br />WHAT’S BROKEN.</h2><span class="ticket-stamp">REPAIR<br />ENQUIRY</span></div>
               <div class="ticket-selection"><span>WHAT ARE WE WORKING ON?</span><div class="device-options" role="group" aria-label="Choose a device">{devices.slice(0,4).map((device,i)=><button type="button" data-device={device} aria-pressed={i === 0}>{device === 'Nintendo Switch' ? 'Switch' : device}</button>)}</div></div>
               <div class="ticket-device"><svg class="device-art"><use id="ticket-icon" href="#console" /></svg><div><strong id="ticket-device">PLAYSTATION</strong><p id="device-hint">No power, no picture or running too hot?</p></div></div>
-              <a id="device-repair" class="ticket-link" href="#repair">Start a PlayStation enquiry <svg class="icon"><use href="#arrow" /></svg></a>
+              <a id="device-repair" class="ticket-link" href="#repair-form">Start a PlayStation enquiry <svg class="icon"><use href="#arrow" /></svg></a>
               <div class="ticket-bottom"><span class="barcode" aria-hidden="true"></span><span>DESCRIBE IT. DIAGNOSE IT.<br />GET BACK TO PLAYING.</span></div>
             </article>
-            <div class="ticket-caption"><span class="caption-line" aria-hidden="true"></span>REAL GEAR. ANOTHER CHANCE.</div>
+            <div class="ticket-turnaround"><svg class="icon"><use href="#check" /></svg><span>FIXED IN 48H<small>Most controller jobs</small></span></div><div class="ticket-caption"><span class="caption-line" aria-hidden="true"></span>ASK. APPROVE. PLAY.</div>
           </div>
         </div>
         <div class="hero-bottom container"><span>BACK TO LIFE. BACK TO THE GAME.</span><a href="#services" aria-label="Scroll to repair services"><svg class="icon"><use href="#arrow" /></svg></a><span>INDEPENDENT CONSOLE REPAIR</span></div>
       </section>
       <div class="device-strip"><div class="container">
-        <span class="strip-label">IN GOOD COMPANY</span>
+        <span class="strip-label">GEAR WE SERVICE</span>
         <div class="marquee" role="region" aria-label="Brands and devices we service">
           <div class="marquee-track">
             {[false, true].map(duplicate => <div class="marquee-group" aria-hidden={duplicate ? 'true' : undefined}>{marqueeDevices.map(device => <span>{device}<i aria-hidden="true">/</i></span>)}</div>)}
@@ -86,32 +86,37 @@ const devices = ['PlayStation', 'Xbox', 'Nintendo Switch', 'Controller', 'Handhe
       </div></div>
       <section class="section container" id="services">
         <div class="section-heading"><h2>SMALL SHOP.<br /><span>SERIOUS REPAIRS.</span></h2><div><p>One faulty part shouldn’t end a good run.<br />Find what’s playing up. We’ll take it from there.</p><span class="section-footnote">CONSOLES / CONTROLLERS / HANDHELDS</span></div></div>
-        <div class="services-grid">{services.map(service => <a class="service" href="#repair" data-fault={service.fault}>
+        <div class="services-grid">{services.map(service => <a class="service" href="#repair-form" data-fault={service.fault}>
           <div class="service-top"><svg class="service-icon"><use href={`#${service.icon}`} /></svg><svg class="icon service-arrow"><use href="#arrow" /></svg></div><h3>{service.title}</h3><p>{service.description}</p><div class="service-tags">{service.tags.map(tag=><span>{tag}</span>)}</div>
         </a>)}</div>
-        <div class="services-note"><span>CAN’T PUT YOUR FINGER ON THE FAULT?</span><a href="#repair">Start with the symptoms. <svg class="icon"><use href="#arrow" /></svg></a></div>
+        <div class="services-note"><span>CAN’T PUT YOUR FINGER ON THE FAULT? DIAGNOSIS IS FREE.</span><a href="#repair-form">Start with the symptoms. <svg class="icon"><use href="#arrow" /></svg></a></div>
+        <aside class="upgrade-callout"><div><h3>GOOD GEAR. ROOM TO LEVEL UP.</h3><p>Thinking about an upgrade? Tell us your device and what you want to improve. We’ll discuss compatibility, parts and price before you decide.</p></div><a class="button" href="#repair-form" data-request="Upgrade">Ask about an upgrade <svg class="icon"><use href="#arrow" /></svg></a></aside>
       </section>
       <section class="clinic-section" id="clinic"><div class="container clinic-grid">
         <div class="clinic-visual"><img src="/images/jtlb-logo.webp" alt="The original JTLB Repair Clinic artwork: a zombie technician soldering a circuit board" width="900" height="900" loading="lazy"/><div class="clinic-art-label">THE LAST BOSS<br /><span>YOUR HARDWARE HAS TO FACE.</span></div></div>
-        <div class="clinic-copy"><h2>REPAIR THE GEAR.<br /><span>KEEP THE MEMORIES.</span></h2><p class="clinic-lead">The console you saved for. The controller you know by feel. The handheld with one more adventure in it.</p><p>That’s what makes a repair worth asking about. J The Last Boss Repair Clinic is for keeping your gaming hardware in the game — from current consoles to the old favourites.</p><div class="clinic-points"><div><svg class="icon"><use href="#console" /></svg><span>Current-gen to classic<strong>PlayStation, Xbox, Nintendo & more</strong></span></div><div><svg class="icon"><use href="#port" /></svg><span>From the fault to the fix<strong>Power, ports, controls & thermal care</strong></span></div></div><a class="text-link" href="https://www.youtube.com/@JTheLastBoss" target="_blank" rel="noopener noreferrer">Meet J The Last Boss on YouTube <svg class="icon"><use href="#arrow" /></svg></a></div>
+        <div class="clinic-copy"><h2>REPAIR THE GEAR.<br /><span>KEEP THE MEMORIES.</span></h2><p class="clinic-lead">The console you saved for. The controller you know by feel. The handheld with one more adventure in it.</p><p>That’s what makes a repair worth asking about. J The Last Boss Repair Clinic is for keeping your gaming hardware in the game — from current consoles to the old favourites.</p><div class="clinic-points"><div><svg class="icon"><use href="#check" /></svg><span>Free diagnosis<strong>Find the fault. Understand your options. No diagnosis fee.</strong></span></div><div><svg class="icon"><use href="#check" /></svg><span>Your quote, agreed upfront<strong>You approve the price before any repair work starts.</strong></span></div><div><svg class="icon"><use href="#check" /></svg><span>No fix, no fee<strong>If we can’t fix it, you don’t pay.</strong></span></div><div><svg class="icon"><use href="#check" /></svg><span>90-day repair warranty<strong>Cover for the parts fitted and the work carried out.</strong></span></div></div><a class="text-link" href="https://www.youtube.com/@JTheLastBoss" target="_blank" rel="noopener noreferrer">Meet J The Last Boss on YouTube <svg class="icon"><use href="#arrow" /></svg></a></div>
       </div></section>
       <section class="section container" id="process">
         <div class="section-heading"><h2>FROM BROKEN<br /><span>TO BACK IN PLAY.</span></h2><p>No technical vocabulary required.<br />Start with what happens when you press power.</p></div>
-        <ol class="steps"><li><span class="step-number">01</span><div class="step-line" aria-hidden="true"></div><h3>TELL US THE PROBLEM.</h3><p>Your device, the symptoms and when it started. Mention any drops, liquid damage or previous repairs.</p></li><li><span class="step-number">02</span><div class="step-line" aria-hidden="true"></div><h3>GET IT CHECKED.</h3><p>Arrange a diagnosis with the shop. Understanding the fault comes before deciding on the repair.</p></li><li><span class="step-number">03</span><div class="step-line" aria-hidden="true"></div><h3>AGREE THE PLAN.</h3><p>Discuss the quote, parts and turnaround. Make sure you know what’s involved before going ahead.</p></li><li><span class="step-number">04</span><div class="step-line" aria-hidden="true"></div><h3>BACK TO THE GAME.</h3><p>Arrange collection and confirm testing, aftercare and warranty details for your repair.</p></li></ol>
+        <ol class="steps"><li><span class="step-number">01</span><div class="step-line" aria-hidden="true"></div><h3>TELL US THE PROBLEM.</h3><p>Your device, the symptoms and when it started. Mention any drops, liquid damage or previous repairs.</p></li><li><span class="step-number">02</span><div class="step-line" aria-hidden="true"></div><h3>FREE DIAGNOSIS.</h3><p>We check the device and explain the fault. You get a clear diagnosis and repair options without a diagnosis fee.</p></li><li><span class="step-number">03</span><div class="step-line" aria-hidden="true"></div><h3>AGREE THE PLAN.</h3><p>You approve the quote, parts and turnaround before work starts. No surprise bill when you collect.</p></li><li><span class="step-number">04</span><div class="step-line" aria-hidden="true"></div><h3>BACK TO THE GAME.</h3><p>Your repair is tested before collection, with a 90-day warranty on the parts fitted and the work carried out.</p></li></ol>
       </section>
       <section class="section container faq" id="faq"><div><h2>BEFORE YOU<br /><span>PRESS START.</span></h2><p>A few answers before you hand over your hardware.</p></div><div class="faq-list">
-        <details><summary>How much will my repair cost?<span aria-hidden="true"></span></summary><p>It depends on the device, the fault and any parts needed. Include the exact model and symptoms so the shop can advise on the next step and quote.</p></details>
-        <details><summary>How long does a repair take?<span aria-hidden="true"></span></summary><p>Diagnosis and parts availability affect turnaround. Ask for an estimate for your specific device before arranging a drop-off.</p></details>
+        <details><summary>How much will my repair cost?<span aria-hidden="true"></span></summary><p>Diagnosis is free. The repair price depends on the device, fault and parts needed. We explain the repair and quote upfront, and only start once you approve.</p></details>
+        <details><summary>How long does a repair take?<span aria-hidden="true"></span></summary><p>Most controller jobs are fixed within 48 hours. Other repairs depend on the fault and parts availability. We’ll discuss the expected turnaround for your specific device before you go ahead.</p></details>
+        <details><summary>Do you charge for diagnosis?<span aria-hidden="true"></span></summary><p>No. Diagnosis is free. We check your device, explain the issue and provide a quote before any repair work starts.</p></details>
+        <details><summary>What if my device can’t be fixed?<span aria-hidden="true"></span></summary><p>No fix, no fee. If we can’t repair your device, you don’t pay. We’ll explain what we found and talk through the options.</p></details>
+        <details><summary>Does my repair come with a warranty?<span aria-hidden="true"></span></summary><p>Yes. Repairs come with a 90-day warranty covering the parts fitted and the work carried out. Keep your repair receipt and contact the shop if a covered issue returns.</p></details>
+        <details><summary>Can I ask about an upgrade instead?<span aria-hidden="true"></span></summary><p>Yes. Choose “Upgrade” in the enquiry form, include your exact model and tell us what you want to improve. We’ll discuss compatibility, available parts and the quote before you decide.</p></details>
         <details><summary>What should I bring with my device?<span aria-hidden="true"></span></summary><p>Check which cables or accessories are needed to reproduce the issue. Back up your saves where possible, and remove game discs and memory cards unless requested.</p></details>
         <details><summary>Can I enquire about a different device?<span aria-hidden="true"></span></summary><p>Yes. Choose “Other” in the enquiry form and include the brand, exact model and fault. The shop can confirm whether it can take on the job.</p></details>
         <details><summary>How do I send my repair enquiry?<span aria-hidden="true"></span></summary><p>Use the form below to prepare and copy your message, then paste it into your existing JTLB conversation. </p></details>
       </div></section>
       <section class="contact-section" id="repair"><div class="section container contact-grid">
-        <div class="contact-copy"><h2>LET’S GET YOU<br /><span>PLAYING AGAIN.</span></h2><p>Tell us what’s playing up.<br />Your next session starts with a conversation.</p><div class="contact-tip"><svg class="icon"><use href="#check" /></svg><div><strong>A LITTLE DETAIL GOES A LONG WAY.</strong><p>Include your exact model, what happens when you use it, and anything you’ve already tried.</p></div></div><div class="contact-brand"><img src="/images/jtlb-icon.jpg" width="48" height="48" alt="" loading="lazy"/><div>J THE LAST BOSS<small>LOOT // REPAIR // REPEAT</small></div></div></div>
-        <form id="repair-form" class="enquiry-paper"><div class="form-heading"><span>JTLB / REPAIR ENQUIRY</span><svg class="icon"><use href="#port" /></svg></div><h3>OPEN A REPAIR TICKET.</h3><div class="form-row"><div><label for="device">YOUR DEVICE</label><select id="device" name="device" required><option value="">Choose your device</option>{devices.map(device=><option>{device}</option>)}<option>Other</option></select></div><div><label for="model">MODEL <span>(OPTIONAL)</span></label><input id="model" name="model" placeholder="e.g. PS5 Slim" maxlength="100"/></div></div><label for="issue">WHAT’S THE PROBLEM?</label><textarea id="issue" name="issue" rows="4" required minlength="10" maxlength="2000" placeholder="No picture on the TV, even with a different HDMI cable…"></textarea><button class="button" type="submit">Copy repair enquiry <svg class="icon"><use href="#arrow" /></svg></button><p class="form-note">Copy your message and send it through your usual JTLB contact channel. This form doesn’t submit a booking.</p><p id="form-status" role="status" aria-live="polite"></p><textarea id="copy-fallback" aria-label="Your prepared enquiry" hidden readonly></textarea><div class="form-tear"><span class="barcode" aria-hidden="true"></span><span>ONE DEVICE.<br />ANOTHER CHANCE.</span></div></form>
+        <div class="contact-copy"><h2>LET’S GET YOU<br /><span>PLAYING AGAIN.</span></h2><p>Repair or upgrade — let’s talk.<br />Free diagnosis. An upfront quote. No fix, no fee.</p><div class="contact-tip"><svg class="icon"><use href="#check" /></svg><div><strong>A LITTLE DETAIL GOES A LONG WAY.</strong><p>Include your exact model, what happens when you use it, and anything you’ve already tried.</p></div></div><div class="booking-placeholder"><span>BOOKING CONTACT</span><strong>Contact details coming soon</strong><p>Prepare your enquiry below and send it through your existing JTLB conversation.</p></div><div class="contact-brand"><img src="/images/jtlb-icon.jpg" width="48" height="48" alt="" loading="lazy"/><div>J THE LAST BOSS<small>LOOT // REPAIR // REPEAT</small></div></div></div>
+        <form id="repair-form" class="enquiry-paper"><div class="form-heading"><span>JTLB / REPAIR ENQUIRY</span><svg class="icon"><use href="#port" /></svg></div><h3>LET’S TALK ABOUT YOUR GEAR.</h3><p class="form-benefit">FREE DIAGNOSIS / QUOTE AGREED UPFRONT</p><fieldset class="request-type"><legend>WHAT DO YOU NEED?</legend><label><input type="radio" name="request" value="Repair" checked /> Repair my gear</label><label><input type="radio" name="request" value="Upgrade" /> Explore an upgrade</label></fieldset><div class="form-row"><div><label for="device">YOUR DEVICE</label><select id="device" name="device" required><option value="">Choose your device</option>{devices.map(device=><option>{device}</option>)}<option>Other</option></select></div><div><label for="model">MODEL <span>(OPTIONAL)</span></label><input id="model" name="model" placeholder="e.g. PS5 Slim" maxlength="100"/></div></div><label for="issue">WHAT WOULD YOU LIKE HELP WITH?</label><textarea id="issue" name="issue" rows="4" required minlength="10" maxlength="2000" placeholder="Describe the fault, or tell us what you’d like to upgrade…"></textarea><button class="button" type="submit">Copy my enquiry <svg class="icon"><use href="#arrow" /></svg></button><p class="form-note">Copy your message and send it through your usual JTLB contact channel. This form doesn’t submit a booking.</p><p id="form-status" role="status" aria-live="polite"></p><textarea id="copy-fallback" aria-label="Your prepared enquiry" hidden readonly></textarea><div class="form-tear"><span class="barcode" aria-hidden="true"></span><span>ONE DEVICE.<br />ANOTHER CHANCE.</span></div></form>
       </div></section>
     </main>
-    <footer><div class="container footer-main"><div class="footer-about"><a class="brand" href="#top"><img src="/images/jtlb-icon.jpg" width="44" height="44" alt=""/><span>J The Last Boss<small>REPAIR CLINIC</small></span></a><p>Console, controller and handheld repair.<br />For the games you’re not done playing.</p></div><div class="footer-links"><span>THE REPAIR BENCH</span><a href="#services">What we fix</a><a href="#process">How it works</a><a href="#repair">Start a repair</a></div><div class="footer-links"><span>J THE LAST BOSS</span><a href="#clinic">The clinic</a><a href="https://www.youtube.com/@JTheLastBoss" target="_blank" rel="noopener noreferrer">Watch on YouTube</a><a href="#faq">Questions & answers</a></div></div><div class="container footer-wordmark" aria-hidden="true">LOOT <i>//</i> REPAIR <i>//</i> REPEAT</div><div class="container footer-bottom"><span>© {new Date().getFullYear()} J The Last Boss Repair Clinic</span><span>Independent repair shop. Not affiliated with Sony, Microsoft or Nintendo.</span><a href="#top">BACK TO TOP ↑</a></div></footer>
+    <footer><div class="container footer-main"><div class="footer-about"><a class="brand" href="#top"><img src="/images/jtlb-icon.jpg" width="44" height="44" alt=""/><span>J The Last Boss<small>REPAIR CLINIC</small></span></a><p>Console, controller and handheld repair.<br />Free diagnosis. No fix, no fee. 90-day warranty.</p></div><div class="footer-links"><span>THE REPAIR BENCH</span><a href="#services">What we fix</a><a href="#process">How it works</a><a href="#repair-form">Start a repair</a></div><div class="footer-links"><span>J THE LAST BOSS</span><a href="#clinic">The clinic</a><a href="https://www.youtube.com/@JTheLastBoss" target="_blank" rel="noopener noreferrer">Watch on YouTube</a><a href="#faq">Questions & answers</a></div></div><div class="container footer-wordmark" aria-hidden="true">LOOT <i>//</i> REPAIR <i>//</i> REPEAT</div><div class="container footer-bottom"><span>© {new Date().getFullYear()} J The Last Boss Repair Clinic</span><span>Independent repair shop. Not affiliated with Sony, Microsoft or Nintendo.</span><a href="#top">BACK TO TOP ↑</a></div></footer>
     <script>
       document.querySelectorAll('.mobile-navigation a').forEach(link => {
         link.addEventListener('click', () => { document.querySelector<HTMLDetailsElement>('.mobile-navigation')!.open = false; });
@@ -145,9 +150,16 @@ const devices = ['PlayStation', 'Xbox', 'Nintendo Switch', 'Controller', 'Handhe
           repairLink.firstChild!.textContent = `Start a ${selectedDevice} enquiry `;
         });
       });
-      repairLink.addEventListener('click', () => { deviceSelect.value = selectedDevice; });
+      repairLink.addEventListener('click', () => {
+        deviceSelect.value = selectedDevice;
+        document.querySelector<HTMLInputElement>('input[name="request"][value="Repair"]')!.checked = true;
+      });
+      document.querySelector('[data-request="Upgrade"]')!.addEventListener('click', () => {
+        document.querySelector<HTMLInputElement>('input[name="request"][value="Upgrade"]')!.checked = true;
+      });
       document.querySelectorAll<HTMLAnchorElement>('[data-fault]').forEach(link => {
         link.addEventListener('click', () => {
+          document.querySelector<HTMLInputElement>('input[name="request"][value="Repair"]')!.checked = true;
           if (!issue.value.trim()) issue.value = `${link.dataset.fault}: `;
           if (link.dataset.fault === 'Controller / stick drift') deviceSelect.value = 'Controller';
           if (link.dataset.fault === 'Handheld / retro') deviceSelect.value = 'Handheld / retro';
@@ -160,7 +172,8 @@ const devices = ['PlayStation', 'Xbox', 'Nintendo Switch', 'Controller', 'Handhe
       form.addEventListener('submit', async event => {
         event.preventDefault();
         const model = document.querySelector<HTMLInputElement>('#model')!.value.trim();
-        const message = `Hi JTLB! I'd like to enquire about a repair.\nDevice: ${deviceSelect.value}${model ? ` (${model})` : ''}\nIssue: ${issue.value.trim()}`;
+        const request = new FormData(form).get('request')!.toString();
+        const message = `Hi JTLB! I'd like to enquire about ${request === 'Upgrade' ? 'an upgrade' : 'a repair'}.\nDevice: ${deviceSelect.value}${model ? ` (${model})` : ''}\n${request === 'Upgrade' ? 'Upgrade request' : 'Issue'}: ${issue.value.trim()}`;
         const status = document.querySelector<HTMLElement>('#form-status')!;
         const fallback = document.querySelector<HTMLTextAreaElement>('#copy-fallback')!;
         try {
