@@ -3,49 +3,25 @@
 <!-- impeccable:product-schema 1 -->
 
 ## Platform
-
 web
 
 ## Stack
-
-Astro (component-based static site), deployed to Vercel.
+Astro static website, GitHub repository kmndhyn/jtlb-repair-clinic, Vercel hosting.
 
 ## Users
-
-Primary: local gamers with a broken console/controller seeking quick, affordable repair. Secondary: walk-in drop-offs and friend referrals. Tertiary: J The Last Boss YouTube audience visiting the repair bench.
+Gamers seeking console, controller, handheld and retro-device repair at J The Last Boss Repair Clinic.
 
 ## Product Purpose
-
-Marketing + lead-gen site for "J The Last Boss Repair Clinic": console, controller, handheld and retro device repair. Primary success metric: repair bookings (WhatsApp/contact). Secondary: trust-building and walk-in traffic.
-
-## Positioning
-
-Specialist bench behind gaming creator J The Last Boss. In-house micro-soldering, genuine/premium parts, prices agreed up front, no fix/no fee, 90-day warranty.
-
-## Operating Context
-
-Small independent shop. Hours Mon–Fri 9–6, Sat 10–4, Sun closed. Unit 4, 128 High Street, Your Town. Phone +1 (555) 012-3456. Email hello@jtlbrepair.example. YouTube @JTheLastBoss. Booking via WhatsApp (wa.me/15550123456). Most jobs 24–48h.
+Explain repair services, establish the JTLB identity and help visitors prepare a repair enquiry.
 
 ## Capabilities and Constraints
-
-Static marketing site, no backend/CMS/accounts. Booking via WhatsApp link with pre-filled message. Preserve business facts: services, warranty, hours, contacts, testimonials (Marcus T., Priya S., Daniel R.), 2000+ devices, 4.9★, 48h. Accessibility: keyboard nav, skip link, focus states, reduced-motion, semantic landmarks. Performance: fast first paint.
+Static site. A hero ticket selects the device. Service links carry symptoms into the enquiry. The form validates the required device and description, includes an optional model, then copies a message. A manual-copy fallback handles unavailable clipboard access. The form does not submit a booking; verified direct contact details are still needed.
 
 ## Brand Commitments
-
-Name "J The Last Boss Repair Clinic". Tone: gritty, worn-print, repair-bay, gaming-native voice. Sign-off "Loot // Repair // Repeat". Palette near-black + red/orange/green + yellow warning. Fonts incumbent Anton + Barlow; redesign world = boxed-software reference manual (rw-manual-acetate-tab-board): milk acetate over section-hue board, Sabon body, Univers heads, mono machine voice, stepped tab rail, 90ms hinge steps, no easing.
+The user explicitly prefers Simon Biala's site at https://simonbiala-art.github.io/circuitfix-website/ and requires red and black. Keep its tactile repair-shop character and improve its craft rather than changing genre. Original JTLB artwork is sourced from the supplied reference repository. See DESIGN.md.
 
 ## Evidence on Hand
-
-3 testimonials; stats (2000+ devices, 4.9★, 48h, 90d); 6 service cards; 4-step process; 6 FAQs; hours; contacts. Assets: icon.jpg, logo.jpg, logo-footer.jpg, splatter.svg, favicon.png, apple-touch-icon.png. No pricing table, no real shop photos.
-
-## Product Principles
-
-1. Trust before action: free diagnosis, approved quotes.
-2. Speed and honesty over polish.
-3. Gaming-native, not generic.
-4. One clear CTA: book a repair.
-5. Creator link is a brand asset.
+The reference provides brand artwork, a YouTube link and six service categories: consoles, controllers, HDMI/charging ports, cleaning/thermal, disc drives and retro/handheld. Its phone, email and street address are placeholders. Repair statistics, testimonials, service times and warranty promises have not been verified; do not present them as facts.
 
 ## Accessibility & Inclusion
-
-WCAG 2.1 AA: contrast, focus-visible, skip link, semantic HTML, reduced-motion. Mobile-first responsive (860px bp). Touch targets ≥44px. Form validation with clear errors; WhatsApp fallback.
+Semantic landmarks, skip link, keyboard focus, native form validation, labelled controls, native mobile menu, announcement of copy status, reduced-motion support and a pause control for the scrolling device strip. Keep the page usable without horizontal document overflow.
